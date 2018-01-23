@@ -1,10 +1,10 @@
 # ADS1115
-The ADS1115 is a high precision analog-to-digital converter (ADC) with 16-bit resolution
+The ADS1115 is a high precision analog-to-digital converter (ADC) with 16-bit resolution. And with A0-A3, 4 ADC ports
 
 
 ## DFRobot_ADS1115 Library for Arduino
 ---------------------------------------------------------
-An Arduino library is provided for reading analog values via I2C
+Provides an Arduino library to read ADS1115 data over I2C. Use this library to read analog voltage values.
 ## Table of Contents
 
 * [Installation](#installation)
@@ -25,7 +25,7 @@ Download the zip file first to use this library and uncompress it to a folder na
 
 ```C++
 
-#include <DFRobot_ADS1115.h>  //
+#include <DFRobot_ADS1115.h>
 
 /*
  * @brief Set the IIC address
@@ -56,7 +56,7 @@ typedef enum
  * @brief Sets the Device operating mode.
  *        This controls the current operational mode of the ADS1115
  */
-void setMode(eADSMode_t mode)
+void setMode(eADSMode_t mode);
 
 typedef enum
 {
