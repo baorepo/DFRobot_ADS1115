@@ -389,6 +389,6 @@ int16_t DFRobot_ADS1115::ComparatorVoltage(uint8_t channel)
     
     // Read the conversion results
     int16_t Voltage = 0;
-    Voltage = readRegister(ads_i2cAddress, ADS1115_REG_POINTER_CONVERT)*coefficient;
+    Voltage = (int16_t)readRegister(ads_i2cAddress, ADS1115_REG_POINTER_CONVERT)*coefficient;
     return Voltage;
 }
