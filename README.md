@@ -92,7 +92,7 @@ void setOSMode(eADSOSMode_t osmode);
  * @return result:
  *     eADSOSMode_t
  */
-eADSOSMode_t getOSMode()
+eADSOSMode_t getOSMode();
 
 typedef enum
 {
@@ -104,7 +104,7 @@ typedef enum
  *        This controls the comparator mode of operation
  */
  
-void setCompMode(eADSCompMode_t compmode)
+void setCompMode(eADSCompMode_t compmode);
 
 typedef enum
 {
