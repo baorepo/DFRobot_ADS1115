@@ -38,7 +38,7 @@ void setup(void)
 
 void loop(void)
 {
-    if (ads.check_ads1115())
+    if (ads.checkADS1115())
     {
         int16_t result01, result03, result13, result23;
         Serial.println("Get the voltage difference between the two channels");

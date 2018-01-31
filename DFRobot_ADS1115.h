@@ -152,7 +152,7 @@ class DFRobot_ADS1115
         uint8_t ads_i2cAddress;
         void setAddr_ADS1115(uint8_t i2cAddress);
         void init(void);
-        bool check_ads1115();
+        bool checkADS1115();
         uint16_t readVoltage(uint8_t channel);
         int16_t ComparatorVoltage(uint8_t channel);
         int16_t getLastConversionResults();

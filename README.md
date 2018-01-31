@@ -208,7 +208,7 @@ void init(void);
  *@return result:
  *     true or false
  */
-bool check_ads1115(void);
+bool checkADS1115(void);
 
 /*
  * @brief Read the voltage of the specified channel

@@ -74,7 +74,7 @@ void DFRobot_ADS1115::init()
 }
 
 
-bool DFRobot_ADS1115::check_ads1115()
+bool DFRobot_ADS1115::checkADS1115()
 {
     uint8_t error;
     ads_i2cAddress;

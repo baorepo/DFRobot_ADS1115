@@ -30,7 +30,7 @@ void setup(void)
 
 void loop(void) 
 {
-    if (ads.check_ads1115())
+    if (ads.checkADS1115())
     {
         int16_t adc0, adc1, adc2, adc3;
         adc0 = ads.readVoltage(0);
