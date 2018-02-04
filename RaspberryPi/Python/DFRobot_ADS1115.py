@@ -56,7 +56,7 @@ mygain=0x02
 coefficient=0.125
 addr_G=ADS1115_IIC_ADDRESS0
 class ADS1115():
-	def set_gain(self,gain):
+	def setGain(self,gain):
 		global mygain
 		global coefficient
 		mygain=gain
@@ -77,7 +77,7 @@ class ADS1115():
 	def setAddr_ADS1115(self,addr):
 		global addr_G
 		addr_G=addr
-	def set_channel(self):
+	def setChannel(self):
 		global mygain
 		"""Select the Channel user want to use from 0-3
 		For Single-ended Output
@@ -96,7 +96,7 @@ class ADS1115():
 		
 		return self.channel
 	
-	def config_single_ended(self):
+	def setSingle(self):
 		global addr_G
 		if self.channel == 0:
 			CONFIG_REG = [ADS1115_REG_CONFIG_OS_SINGLE | ADS1115_REG_CONFIG_MUX_SINGLE_0 | mygain | ADS1115_REG_CONFIG_MODE_CONTIN, ADS1115_REG_CONFIG_DR_128SPS | ADS1115_REG_CONFIG_CQUE_NONE]
@@ -109,7 +109,7 @@ class ADS1115():
 		
 		bus.write_i2c_block_data(addr_G, ADS1115_REG_POINTER_CONFIG, CONFIG_REG)
 	
-	def config_differential(self):
+	def setDifferential(self):
 		global addr_G
 		if self.channel == 0:
 			CONFIG_REG = [ADS1115_REG_CONFIG_OS_SINGLE | ADS1115_REG_CONFIG_MUX_DIFF_0_1 | mygain | ADS1115_REG_CONFIG_MODE_CONTIN, ADS1115_REG_CONFIG_DR_128SPS | ADS1115_REG_CONFIG_CQUE_NONE]
@@ -122,7 +122,7 @@ class ADS1115():
 		
 		bus.write_i2c_block_data(addr_G, ADS1115_REG_POINTER_CONFIG, CONFIG_REG)
 	
-	def read_adc(self):
+	def readValue(self):
 		"""Read data back from ADS1115_REG_POINTER_CONVERT(0x00), 2 bytes
 		raw_adc MSB, raw_adc LSB"""
 		global coefficient

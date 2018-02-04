@@ -14,14 +14,14 @@ while True :
   #Set the IIC address
 	ads1115.setAddr_ADS1115(0x49)
   #Sets the gain and input voltage range.
-	ads1115.set_gain(ADS1115_REG_CONFIG_PGA_4_096V)
+	ads1115.setGain(ADS1115_REG_CONFIG_PGA_4_096V)
   #Get the channel you need to enter
-	ads1115.set_channel()
+	ads1115.setChannel()
   #Configuration using a single read
-	ads1115.config_single_ended()
+	ads1115.setSingle()
 	time.sleep(0.1)
   #Read ADC value
-	adc = ads1115.read_adc()
+	adc = ads1115.readValue()
 	print "Digital Value of Analog Input : %d mV"%(adc['r'])
 	print " ********************************************* "
 	time.sleep(0.8)
