@@ -67,22 +67,22 @@ def setGain(self,gain);
  *            2 : AINP = AIN1 and AINN = AIN3
  *            3 : AINP = AIN2 and AINN = AIN3
  */
-setChannel()
+def setChannel(self);
 
 /*
  * @brief Configuration using a single read
  */
-setSingle();
+def setSingle(self);
 
 /*
  * @brief Configure as comparator output
  */
-setDifferential();
+def setDifferential(self);
 
 /*
  * @brief Read ADC value
  */
-readValue();
+def readValue(self);
 
 ```
 ## Credits
