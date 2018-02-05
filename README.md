@@ -29,7 +29,7 @@ Download the zip file first to use this library and uncompress it to a folder na
 #define ADS1115_IIC_ADDRESS0         (0x48)
 #define ADS1115_IIC_ADDRESS1         (0x49)
 /*
- * @brief Set the IIC address
+ * @brief Sets the IIC address
  */
 void setAddr_ADS1115(IIC_ADDRESS);
 
@@ -83,7 +83,7 @@ typedef enum
     eOSMODE_NOTBUSY      = ADS1115_REG_CONFIG_OS_NOTBUSY
 } eADSOSMode_t;
 /*
- * @brief Sets the Operational status/single-shot conversion start
+ * @brief Sets the Operational status/single-shot conversion to start
           This determines the operational status of the device
  */
 void setOSMode(eADSOSMode_t osmode);
@@ -134,7 +134,7 @@ typedef enum
 /*
  * @brief Sets the Latching comparator
  *        This controls whether the ALERT/RDY pin latches once asserted 
- *        or clears once conversions are within the margin of the upper 
+ *        or clears when conversions are within the margin of the upper 
  *        and lower threshold values
  */
 void setCompLat(eADSCompLat_t complat);
@@ -203,7 +203,7 @@ int16_t getHighThreshold();
 void init(void);
 
 /*
- * @brief Check the connection status of ads1115
+ * @brief Checks the connection status of ads1115
  *
  *@return result:
  *     true or false
@@ -211,7 +211,7 @@ void init(void);
 bool checkADS1115(void);
 
 /*
- * @brief Read the voltage of the specified channel
+ * @brief Reads the voltage of the specified channel
  *
  * @return result:
  *      Voltage
