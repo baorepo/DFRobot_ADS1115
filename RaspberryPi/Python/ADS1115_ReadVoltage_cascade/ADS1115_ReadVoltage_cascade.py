@@ -17,17 +17,35 @@ while True :
     ads1115.setGain(ADS1115_REG_CONFIG_PGA_4_096V)
     #Get the Digital Value of Analog of selected channel
     adc = ads1115.readVoltage(0)
-    print "Digital Value of Analog of A0 : %d mV"%(adc['r'])
+    print "Digital Value of Analog of ADC1 A0 : %d mV"%(adc['r'])
     print " ********************************************* "
     time.sleep(0.8)
     adc = ads1115.readVoltage(1)
-    print "Digital Value of Analog of A1 : %d mV"%(adc['r'])
+    print "Digital Value of Analog of ADC1 A1 : %d mV"%(adc['r'])
     print " ********************************************* "
     time.sleep(0.8)
     adc = ads1115.readVoltage(2)
-    print "Digital Value of Analog of A2 : %d mV"%(adc['r'])
+    print "Digital Value of Analog of ADC1 A2 : %d mV"%(adc['r'])
     print " ********************************************* "
     time.sleep(0.8)
     adc = ads1115.readVoltage(3)
-    print "Digital Value of Analog of A3 : %d mV"%(adc['r'])
+    print "Digital Value of Analog of ADC1 A3 : %d mV"%(adc['r'])
+    print " ********************************************* "
+
+    ads1115.setAddr_ADS1115(0x49)
+    ads1115.setGain(ADS1115_REG_CONFIG_PGA_4_096V)
+    adc = ads1115.readVoltage(0)
+    print "Digital Value of Analog of ADC2 A0 : %d mV"%(adc['r'])
+    print " ********************************************* "
+    time.sleep(0.8)
+    adc = ads1115.readVoltage(1)
+    print "Digital Value of Analog of ADC2 A1 : %d mV"%(adc['r'])
+    print " ********************************************* "
+    time.sleep(0.8)
+    adc = ads1115.readVoltage(2)
+    print "Digital Value of Analog of ADC2 A2 : %d mV"%(adc['r'])
+    print " ********************************************* "
+    time.sleep(0.8)
+    adc = ads1115.readVoltage(3)
+    print "Digital Value of Analog of ADC2 A3 : %d mV"%(adc['r'])
     print " ********************************************* "

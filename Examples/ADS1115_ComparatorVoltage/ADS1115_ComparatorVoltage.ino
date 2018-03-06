@@ -41,7 +41,7 @@ void loop(void)
     if (ads.checkADS1115())
     {
         int16_t result01, result03, result13, result23;
-        Serial.println("Get the voltage difference between the two channels");
+        Serial.println("Get the voltage difference between two channels");
         Serial.println(" ");
         result01 = ads.ComparatorVoltage(01);
         Serial.print("The voltage difference between A0 and A1 ");

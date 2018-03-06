@@ -77,7 +77,7 @@ class ADS1115():
 	def setAddr_ADS1115(self,addr):
 		global addr_G
 		addr_G=addr
-	def setChannel(self):
+	def setChannel(self,channel):
 		global mygain
 		"""Select the Channel user want to use from 0-3
 		For Single-ended Output
@@ -90,9 +90,9 @@ class ADS1115():
 		1 : AINP = AIN0 and AINN = AIN3
 		2 : AINP = AIN1 and AINN = AIN3
 		3 : AINP = AIN2 and AINN = AIN3"""
-		self.channel = int(input("Enter the Channel No. = "))
+		self.channel = channel
 		while self.channel > 3 :
-			self.channel = int(input("Enter the Channel No. = "))
+			self.channel = 0
 		
 		return self.channel
 	
@@ -136,3 +136,15 @@ class ADS1115():
 			raw_adc -= 65535
 		raw_adc = int(float(raw_adc)*coefficient)
 		return {'r' : raw_adc}
+
+	def readVoltage(self,channel):
+		self.setChannel(channel)
+		self.setSingle()
+		time.sleep(0.1)
+		return self.readValue()
+
+	def ComparatorVoltage(self,channel):
+		self.setChannel(channel)
+		self.setDifferential()
+		time.sleep(0.1)
+		return self.readValue()

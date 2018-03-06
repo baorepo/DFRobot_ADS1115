@@ -22,7 +22,7 @@ Run the program:
 
 ```cpp
 
-$> python DFRobot_MCP4725.py
+$> python DFRobot_ADS1115.py
 
 ```
 
