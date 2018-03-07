@@ -13,6 +13,8 @@
  * version  V1.0
  * date  2018-01-21
  */
+
+#include <Wire.h>
 #include <DFRobot_ADS1115.h>
 
 DFRobot_ADS1115 ads;
