@@ -15,22 +15,18 @@ while True :
     #Set the IIC address
     ads1115.setAddr_ADS1115(0x48)
     #Sets the gain and input voltage range.
-    ads1115.setGain(ADS1115_REG_CONFIG_PGA_4_096V)
+    ads1115.setGain(ADS1115_REG_CONFIG_PGA_6_144V)
     time.sleep(0.8)
     #Get the voltage difference between two channels
     adc = ads1115.ComparatorVoltage(0)
-    print "The voltage difference between A0 and A1 : %d "%(adc['r'])
-    print " ********************************************* "
+    print "The voltage difference between A0 and A1 :%d "%(adc['r'])
     time.sleep(0.8)
     adc = ads1115.ComparatorVoltage(1)
-    print "The voltage difference between A0 and A3 : %d "%(adc['r'])
-    print " ********************************************* "
+    print "The voltage difference between A0 and A3 :%d "%(adc['r'])
     time.sleep(0.8)
     adc = ads1115.ComparatorVoltage(2)
-    print "The voltage difference between A1 and A3 : %d "%(adc['r'])
-    print " ********************************************* "
+    print "The voltage difference between A1 and A3 :%d "%(adc['r'])
     time.sleep(0.8)
     adc = ads1115.ComparatorVoltage(3)
-    print "The voltage difference between A2 and A3 : %d "%(adc['r'])
-    print " ********************************************* "
+    print "The voltage difference between A2 and A3 :%d "%(adc['r'])
 

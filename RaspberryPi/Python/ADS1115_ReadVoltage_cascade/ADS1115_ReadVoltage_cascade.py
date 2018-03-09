@@ -14,38 +14,23 @@ while True :
     #Set the IIC address
     ads1115.setAddr_ADS1115(0x48)
     #Sets the gain and input voltage range.
-    ads1115.setGain(ADS1115_REG_CONFIG_PGA_4_096V)
+    ads1115.setGain(ADS1115_REG_CONFIG_PGA_6_144V)
     #Get the Digital Value of Analog of selected channel
-    adc = ads1115.readVoltage(0)
-    print "Digital Value of Analog of ADC1 A0 : %d mV"%(adc['r'])
-    print " ********************************************* "
-    time.sleep(0.8)
-    adc = ads1115.readVoltage(1)
-    print "Digital Value of Analog of ADC1 A1 : %d mV"%(adc['r'])
-    print " ********************************************* "
-    time.sleep(0.8)
-    adc = ads1115.readVoltage(2)
-    print "Digital Value of Analog of ADC1 A2 : %d mV"%(adc['r'])
-    print " ********************************************* "
-    time.sleep(0.8)
-    adc = ads1115.readVoltage(3)
-    print "Digital Value of Analog of ADC1 A3 : %d mV"%(adc['r'])
-    print " ********************************************* "
-
+    adc0 = ads1115.readVoltage(0)
+    time.sleep(0.2)
+    adc1 = ads1115.readVoltage(1)
+    time.sleep(0.2)
+    adc2 = ads1115.readVoltage(2)
+    time.sleep(0.2)
+    adc3 = ads1115.readVoltage(3)
+    print "ADC1 A0:%dmV A1:%dmV A2:%dmV A3:%dmV"%(adc0['r'],adc1['r'],adc2['r'],adc3['r'])
     ads1115.setAddr_ADS1115(0x49)
-    ads1115.setGain(ADS1115_REG_CONFIG_PGA_4_096V)
-    adc = ads1115.readVoltage(0)
-    print "Digital Value of Analog of ADC2 A0 : %d mV"%(adc['r'])
-    print " ********************************************* "
-    time.sleep(0.8)
-    adc = ads1115.readVoltage(1)
-    print "Digital Value of Analog of ADC2 A1 : %d mV"%(adc['r'])
-    print " ********************************************* "
-    time.sleep(0.8)
-    adc = ads1115.readVoltage(2)
-    print "Digital Value of Analog of ADC2 A2 : %d mV"%(adc['r'])
-    print " ********************************************* "
-    time.sleep(0.8)
-    adc = ads1115.readVoltage(3)
-    print "Digital Value of Analog of ADC2 A3 : %d mV"%(adc['r'])
-    print " ********************************************* "
+    ads1115.setGain(ADS1115_REG_CONFIG_PGA_6_144V)
+    adc0 = ads1115.readVoltage(0)
+    time.sleep(0.2)
+    adc1 = ads1115.readVoltage(1)
+    time.sleep(0.2)
+    adc2 = ads1115.readVoltage(2)
+    time.sleep(0.2)
+    adc3 = ads1115.readVoltage(3)
+    print "ADC2 A0:%dmV A1:%dmV A2:%dmV A3:%dmV"%(adc0['r'],adc1['r'],adc2['r'],adc3['r'])
