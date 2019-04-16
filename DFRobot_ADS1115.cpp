@@ -77,7 +77,6 @@ void DFRobot_ADS1115::init()
 bool DFRobot_ADS1115::checkADS1115()
 {
     uint8_t error;
-    ads_i2cAddress;
     Wire.beginTransmission(ads_i2cAddress);
     error = Wire.endTransmission();
     if(error == 0){
@@ -347,7 +346,7 @@ uint16_t DFRobot_ADS1115::readVoltage(uint8_t channel)
 int16_t DFRobot_ADS1115::ComparatorVoltage(uint8_t channel)
 {
     // Start with default values
-    uint16_t config;
+    uint16_t config = 0;
     // Set Operational status/single-shot conversion start
     config |= ads_osmode;
     // Set PGA/voltage range
